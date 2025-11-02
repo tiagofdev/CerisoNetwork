@@ -1,0 +1,45 @@
+<div class="modal fade show d-flex justify-content-center align-content-center align-items-center" tabindex="-1" role="dialog" style="display: block;" >
+
+  <div class="flex-column justify-content-center align-content-center">
+    <div class="flex-row align-items-end justify-content-end align-content-end mb-1">
+      <div class="col">
+        <button class="btn" (click)="closePopup()" style="background-color: #74cc8b">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="cmt row card mb-4 shadow-sm" style="min-width: 400px; max-width: 400px;">
+      <div class="m-0 shadow border-top-2" style="padding: 8px 0 0 12px;">
+        <p>Nouveau Message</p>
+      </div>
+
+      <div class="h-25 col d-inline-block p-3 shadow-lg border-top-2">
+        <form #addPostForm=ngForm (ngSubmit)="addPost(addPostForm)" >
+          <div class="row p-1">
+                <textarea [(ngModel)]="post_input"
+                          name="post_input"
+                          class="form-control" rows="4"
+                          placeholder="Écrire Message..." required maxlength="255">
+                </textarea>
+          </div>
+          <div class="row">
+            <label class="btn" for="hashtag_input">Hashtags</label>
+            <input type="text" ngModel="" id="hashtag_input" name="hashtag_input" required max="50"
+              oninput="this.value = this.value.replace(/[^0-9a-zA-Z,#_]/g, '').replace(/(\..*)\./g, '$1');">
+          </div>
+          <div class="row">
+            <label class="btn" for="image_input">Image URL</label>
+            <input type="url" ngModel="" id="image_input" name="image_input" required max="100">
+          </div>
+          <div class="row  p-1 align-items-end">
+            <button type="submit" class="btn" style="background-color: #74cc8b">Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,46 @@
+<h3>Rest api</h3>
+<br>
+
+<div class="row mt-4" >
+  <div class="col">
+    <label for="pseudo">Chercher Post par Utilisateur</label>
+    <input type="text" id="pseudo" [(ngModel)]="userPseudo" placeholder="Saisissez pseudo">
+    <button (click)="fetchPosts(userPseudo)">GET Posts</button>
+  </div>
+
+  <div class="col">
+    <input type="number" [(ngModel)]="postId" placeholder="Saisissez PostID">
+    <button (click)="resetLikes(postId)">PUT Reset Likes</button>
+  </div>
+
+  <div class="col">
+    <input type="number" [(ngModel)]="postIdToDelete" placeholder="Saisissez PostID">
+    <button (click)="delete(postIdToDelete)">DELETE Post</button>
+  </div>
+
+  <div class="col">
+    <input type="text" [(ngModel)]="postBody" placeholder="Nouveau Message">
+    <button (click)="newPost(postBody)">POST New Post</button>
+  </div>
+
+</div>
+<br>
+
+<div *ngIf="message" class="error">{{ message }}</div>
+<ul *ngIf="posts">
+  <li *ngFor="let post of posts">
+    <div>
+      <p>Utilisateur: {{ post.pseudo }}</p>
+      <p>ID: {{ post._id }} --- {{ post.date }} --- Likes: {{ post.likes }}</p>
+      <p>{{ post.body }}</p>
+    </div>
+  </li>
+</ul>
+
+
+<div *ngIf="singlePost.body != undefined ">
+  <p>{{ singlePost.pseudo }}</p>
+  <p>ID: {{ singlePost._id }} --- {{ singlePost.date }} --- Likes: {{ singlePost.likes }}</p>
+  <p>{{ singlePost.body }}</p>
+
+</div>

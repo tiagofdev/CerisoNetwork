@@ -1,0 +1,50 @@
+#mybar {
+  height: 52px;
+  z-index: 1031;
+}
+
+.navbar-custom {
+  background-color: #28a745; /* Green theme */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white;
+}
+.navbar-custom .nav-link:hover {
+  color: #d4edda; /* Lighter green on hover */
+}
+
+#appContainer {
+  min-width: 450px;
+  min-height: 720px;
+
+  padding: 0;
+  margin: 0;
+
+}
+
+#bodyContainer {
+  margin: 0;
+  margin-top: 52px;
+  padding: 0;
+  background: linear-gradient(to bottom, #e8e8e8, #d1d1d1);
+}
+
+#bandeau {
+
+}
+
+.navbar {
+  background: linear-gradient(to bottom, #28A745, #74cc8b);
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 767.98px) {
+  .sides {
+    display: none;
+  }
+}

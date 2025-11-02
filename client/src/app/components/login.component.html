@@ -1,0 +1,194 @@
+<div class="container-fluid" >
+  <div class="row" >
+    <!-- Index Section -->
+    <div class="col-lg-7 col-md-7 d-none d-md-block index-container">
+      <div class="index-content">
+      <h3 class="text-center">Welcome to Our Platform</h3>
+      <p class="text-center">Discover the best features, connect with the community, and grow your potential with us!</p>
+
+      <!-- Feature Section -->
+      <div class="mb-4">
+        <i class="bi bi-lightbulb feature-icon"></i>
+        <h5 class="mt-2">Engagement</h5>
+        <p>Connecting people</p>
+      </div>
+
+      <div class="mb-4">
+        <i class="bi bi-people feature-icon"></i>
+        <h5 class="mt-2">Community Support</h5>
+        <p>Join a vibrant community of users and share insights</p>
+      </div>
+
+      <div class="mb-4">
+        <i class="bi bi-shield-check feature-icon"></i>
+        <h5 class="mt-2">Secure and Reliable</h5>
+        <p>Your security and privacy are our top priorities</p>
+      </div>
+
+      <!-- Learn More Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-learn-more">Learn More</button>
+      </div>
+      </div>
+    </div>
+
+    <!-- Login Section -->
+    <div class="col-lg-5 col-md-5 col-12 login">
+      <div class="login-container text-center">
+        <h3 class="text-primary"><i class="bi bi-person-circle"></i> Connexion</h3>
+          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+            <!-- Email Input -->
+            <div class="mb-3 text-start">
+              <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+              <input type="text" class="form-control" id="email" name="email" ngModel=""
+                     placeholder="Entrez votre email" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3 text-start">
+              <label for="password" class="form-label"><i class="bi bi-lock"></i> Mot de Passe</label>
+              <input type="password" class="form-control" id="password" name="password"
+                     ngModel="" placeholder="Entrez mot de passe" required>
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="mb-3 text-end">
+              <a href="#" class="text-decoration-none"><i class="bi bi-question-circle"></i> Mot de passe oublié?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right"></i> Connecter</button>
+          </form>
+
+        <hr class="my-4">
+
+        <!-- Create Account Link -->
+        <p class="mb-0">Pas de compte? <a routerLink="app-root/create-account"
+            class="text-decoration-none text-primary" (click)="goTo('create_account')"><i class="bi bi-person-plus"></i> Créer Compte</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .index-container {
+    background-color: #f8f9fa; /* Light background for example */
+    height: 100vh; /* Full height of the viewport */
+  }
+
+  .login {
+    background-color: #e9ecef; /* Slightly different background */
+    height: 100vh; /* Full height of the viewport */
+  }
+
+  /* Mobile Specific Layout */
+  @media (max-width: 768px) {
+    .index-container, .login {
+      height: auto; /* Let the content define the height on smaller screens */
+    }
+
+    .index-container {
+      margin-top: 20px; /* Add space between index and login on mobile */
+    }
+
+    /* Make the index and login sections stack vertically on mobile */
+    .col-lg-7, .col-lg-5 {
+      width: 100%; /* Full width on mobile */
+    }
+
+    /* Modify login content height on smaller screens */
+    .login-container {
+      padding: 15px;
+      max-width: 90%;
+    }
+  }
+
+
+
+
+
+  .login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 80px;
+  }
+
+  .login-container h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #28a745; /* Green for the title */
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #28a745; /* Green for focus state */
+  }
+  .btn-primary {
+    background-color: #28a745; /* Green button background */
+    border-color: #28a745; /* Green border */
+  }
+  .btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #1e7e34;
+  }
+  .text-primary {
+    color: #28a745 !important;
+  }
+  /* Green for links and other text */
+  .index-container {
+    background-color: #ffffff; /* White background for contrast */
+
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    height: 100vh;
+    overflow-y: auto; /* Ensure scrolling for content overflow */
+  }
+  .index-container h3 {
+    color: #28a745; /* Green heading */
+    font-weight: bold;
+  }
+  .feature-icon {
+    font-size: 50px;
+    color: #28a745;
+  }
+  .index-container {
+    position: relative;
+    background: url('../../assets/socialnetwork.jpg') no-repeat center center; /* Placeholder for the background image */
+    background-size: cover;
+    height: 100vh; /* Full viewport height */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Subtle text shadow for better readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+  .index-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+
+  }
+  .index h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .btn-learn-more {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .btn-learn-more:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+
+</style>

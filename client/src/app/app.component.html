@@ -1,0 +1,42 @@
+<div id="appContainer" class="container-fluid">
+
+<!--  NAVBAR -->
+  <nav class="navbar navbar-custom fixed-top align-content-center align-items-center" id="mybar">
+    <div class="container-fluid d-flex align-items-center px-4">
+
+      <!-- Brand (Left) -->
+      <div class="sides me-3">
+        <a class="navbar-brand" routerLink="/app-root/dashboard"><i class="bi bi-house"></i> Cerisonet</a>
+      </div>
+
+      <!-- Bandeau (Center, flexible width) -->
+      <div class="flex-grow-1 text-center align-content-center" id="bandeau" style="height: 60px; overflow: hidden;">
+        <pre class="mb-0">{{ bandeau }}</pre>
+      </div>
+
+      <!-- User Info (Right) -->
+      <div class="ms-3 row">
+        <a class="sides nav-link col" *ngIf="username">
+          {{ username }}
+        </a>
+        <a class="nav-link col" routerLink="/app-root/login" (click)="onLogout()" *ngIf="username">
+          <i class="bi bi-box-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+
+  <!--class="custom-control-input"-->
+  <div class="container-fluid" id="bodyContainer">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>
+
+
+

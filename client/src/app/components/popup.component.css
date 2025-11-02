@@ -1,0 +1,51 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.25); /* Gray out the background */
+}
+
+.modal-dialog {
+  animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+}
+
+.modal-content {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stylish shadow */
+  /*cursor: pointer; !* Make the whole popup clickable *!*/
+}
+
+.modal-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5em 0.7em;
+  border-radius: 10px;
+}
+
+.cmt {
+  box-shadow: 0 0 10px rgba(116, 204, 139, 0.5);
+  color: black;
+  border: 5px solid #74cc8b;
+  border-radius: 12px;
+  width: 85%;
+  max-height: 440px;
+
+}
+
+.cmt .btn-light:hover {
+  background-color: #74cc8b1a;
+}
+
